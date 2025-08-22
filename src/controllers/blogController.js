@@ -32,7 +32,7 @@ const getAllBlogs = asyncHandler(async (req, res) => {
         throw new ApiError(404, 'No blogs found');
     }
 
-    return res.status(200).json(new ApiResponse(200, blogs, 'Blogs fetched successfully'));
+    return res.status(200).json(new ApiResponse(200, blogs || [], 'Blogs fetched successfully'));
 });
 
 
